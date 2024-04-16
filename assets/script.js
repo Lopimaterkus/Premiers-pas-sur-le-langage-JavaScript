@@ -34,7 +34,7 @@ arrowRight.addEventListener('click', () => {
 const banner = document.getElementById('banner');
 const dotsContainer = banner.querySelector('.dots');
 
-// Ajouter un point pour chaque diapositive
+
 slides.forEach((slide, index) => {
     const dot = document.createElement('div');
     dot.classList.add('dot');
@@ -45,8 +45,6 @@ slides.forEach((slide, index) => {
 });
 
 const dots = dotsContainer.querySelectorAll('.dot');
-
-// Fonction pour mettre à jour le point sélectionné
 function updateSelectedDot(selectedIndex) {
     dots.forEach((dot, index) => {
         if (index === selectedIndex) {
@@ -56,9 +54,9 @@ function updateSelectedDot(selectedIndex) {
         }
     });
 }
-let currentSlideIndex = 0; // Variable pour suivre l'index de la diapositive actuelle
+let currentSlideIndex = 0;
 
-// Fonction pour mettre à jour le contenu de la diapositive
+
 function updateSlide(index) {
     const slide = slides[index];
     const bannerImg = document.querySelector('.banner-img');
@@ -67,9 +65,9 @@ function updateSlide(index) {
     bannerImg.src = "./assets/images/slideshow/" + slide.image;
     tagLine.innerHTML = slide.tagLine;
 
-    updateSelectedDot(index); // Mettre à jour le point sélectionné
+    updateSelectedDot(index); 
 }
-// Mettre à jour le point sélectionné au clic sur les points de navigation
+
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         currentSlideIndex = index;
